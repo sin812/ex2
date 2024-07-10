@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette</title>
+    <style>
+        .color-box {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #history {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Palette</h1>
+    <div id="palette">
+        <div class="color-box" style="background-color: red;" onclick="selectColor('red')"></div>
+        <div class="color-box" style="background-color: blue;" onclick="selectColor('blue')"></div>
+        <div class="color-box" style="background-color: green;" onclick="selectColor('green')"></div>
+        <div class="color-box" style="background-color: yellow;" onclick="selectColor('yellow')"></div>
+        <div class="color-box" style="background-color: magenta;" onclick="selectColor('magenta')"></div>
+        <div class="color-box" style="background-color: cyan;" onclick="selectColor('cyan')"></div>
+    </div>
+    <p id="message"></p>
+    <div id="history">
+        <h3>History</h3>
+        <ul id="colorHistory"></ul>
+    </div>
+
+    <script>
+        const historyList = document.getElementById('colorHistory');
+
+        function selectColor(color) {
+            document.getElementById('message').innerText = 'Hello world!';
+            document.getElementById('message').style.color = color;
+            const li = document.createElement('li');
+            li.innerText = color;
+            historyList.appendChild(li);
+        }
+    </script>
+</body>
+</html>
